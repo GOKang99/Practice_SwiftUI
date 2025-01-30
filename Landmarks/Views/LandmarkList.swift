@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LandmarkList: View {
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView {   
             List(landmarks) { landmark in
                 NavigationLink {
                     LandmarkDetail(landmark: landmark)
