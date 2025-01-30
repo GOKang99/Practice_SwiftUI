@@ -10,7 +10,6 @@ import SwiftUI
 
 struct LandmarkList: View {
     @State private var showFavoritesOnly = false
-    
     var filteredLandmarks: [Landmark] {
         landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)
@@ -20,13 +19,19 @@ struct LandmarkList: View {
     
     var body: some View {
         NavigationSplitView {   
-            List(filteredLandmarks) { landmark in
+            List{
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                ForEach(filteredLandmarks) { landmark in
                 NavigationLink {
                     LandmarkDetail(landmark: landmark)
                 } label: {
                     LandmarkRow(landmark: landmark)
+                    }
                 }
             }
+            .animation(.default, value: filteredLandmarks) //기본 애니메이션
             .navigationTitle("Landmarks")
         } detail: {
             Text("Select a Landmark")
