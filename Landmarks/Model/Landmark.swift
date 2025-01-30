@@ -12,7 +12,7 @@ import CoreLocation
 //Hashble은 해시값은 객체의 데이터를 나타내는 고유의 값.
 //객체를 해시값으로 변환하여 저장,해시값을 기반으로 객체를 비교.,필요하면 개발자가 직접 고유한 해시값 생성 방법을 정의.
 //Codable은 Json외부 데이터를 인코딩 디코딩 가능하도록 해준다.
-struct Landmark: Hashable, Codable {
+struct Landmark: Hashable, Codable,Identifiable {
     var id: Int
     var name: String
     var park: String
