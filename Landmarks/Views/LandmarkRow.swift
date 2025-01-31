@@ -28,18 +28,18 @@ struct LandmarkRow: View {
 //Preview는 미리보기를 생성한다. 여러 프리뷰를 만들고 캔버스에서 확인 가능
 /* Group으로 묶는다면 한 프리뷰에서 여러개 확인 가능
  #Preview("Turtle Rock") {
-    Group{
-        LandmarkRow(landmark: landmarks[0])
-        LandmarkRow(landmark: landmarks[1])
-    }
-}
-*/
+ Group{
+ LandmarkRow(landmark: landmarks[0])
+ LandmarkRow(landmark: landmarks[1])
+ }
+ }
+ */
 
 #Preview("Turtle Rock") {
     let landmarks = ModelData().landmarks
     return Group {
-            LandmarkRow(landmark: landmarks[0])
-            LandmarkRow(landmark: landmarks[1])
-        }
+        LandmarkRow(landmark: landmarks[0])
+        LandmarkRow(landmark: landmarks[1])
+    }
 }
 

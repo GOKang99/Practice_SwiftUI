@@ -22,8 +22,8 @@ struct Landmark: Hashable, Codable,Identifiable {
     
     private var imageName: String
     var image: Image {
-            Image(imageName)
-        }
+        Image(imageName)
+    }
     
     private var coordinates: Coordinates//Coordinates라는 데이터 타입
     var locationCoordinate: CLLocationCoordinate2D {
